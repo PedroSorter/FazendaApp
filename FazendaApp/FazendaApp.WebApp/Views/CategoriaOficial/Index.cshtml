@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FazendaApp.Domain.Model.CategoriaOficialModel>
+
+<h1>Lista Categorias</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.ID)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Nome)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.Sexo)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.UF)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.ValorMinimo)
+      </th>
+      <th>
+        @Html.DisplayNameFor(model => model.ValorMaximo)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.UF)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.ValorMinimo)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.ValorMaximo)
+        </td>
+        <td>
+          @Html.ActionLink("Detalhes", "Detalhes", new { ID = item.ID }) |
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
